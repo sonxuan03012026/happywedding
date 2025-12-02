@@ -6986,9 +6986,149 @@
 
     <!-- Attribution (ẩn) -->
     <p style="display: none;">Icon by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a></p>
+    <script>
+        // Xử lý preloader
+        window.addEventListener("load", function() {
+            const preloader = document.getElementById("preloader");
+
+            //set invite text
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const inviteParam = urlParams.get('invite');
+            const inviteText = document.getElementById("invite-text");
+            if (inviteParam) {
+                inviteText.textContent = `Trân Trọng Kính Mời: ${inviteParam}`;
+            }
+        });
+        // Hàm mở thiệp khi nhấn nút
+        function openCard() {
+            preloader.style.opacity = "0";
+            preloader.style.transition = "opacity 1s ease-in-out";
+            setTimeout(() => {
+                preloader.style.display = "none";
+            }, 1000); // Chờ 1 giây sau khi ẩn preloader
+            toggleMusic();
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+    <style>
+        /* Đặt toàn màn hình */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://w.ladicdn.com/s768x890/5c728619c417ab07e5194baa/istockphoto-1370544962-612x612-20240609095545-gdg85.jpg');
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 90000060;
+            gap: 10px
+        }
+
+        #preloader h1 {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease-in-out infinite;
+            font-family: "Dancing Script", cursive;
+            font-size: clamp(24px, 8vw, 60px);
+            /* Điều chỉnh font-size từ 24px đến 60px, dựa trên chiều rộng viewport */
+            font-style: italic;
+            line-height: 1.2;
+            color: rgb(139, 91, 19);
+            text-align: center;
+        }
+
+        #preloader h2 {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease-in-out infinite;
+            font-family: "Dancing Script", cursive;
+            font-size: 2rem;
+            /* Điều chỉnh font-size từ 24px đến 60px, dựa trên chiều rộng viewport */
+            font-style: italic;
+            line-height: 1.2;
+            color: rgb(139, 91, 19);
+            text-align: center;
+        }
+
+        #preloader .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-top: 5px solid white;
+            border-radius: 50%;
+            margin-top: 20px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes fadeIn {
+            0%,
+            100% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        #content {
+            display: none;
+            text-align: center;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        #content h1 {
+            color: #ff6f61;
+            font-size: 4rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.3rem;
+            color: white;
+            background-color: rgb(123, 79, 13);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border-radius: 10px;
+            font-family: "Dancing Script", cursive;
+        }
+
+        .btn:hover {
+            background-color: rgb(123, 79, 13);
+        }
+    </style>
 </head>
 
 <body class="lazyload"><svg xmlns="http://www.w3.org/2000/svg" style="width: 0px; height: 0px; position: absolute; overflow: hidden; display: none;"><symbol id="shape_WGFZZyxvlu" viewBox="0 0 408.7 408.7"><polygon fill="#fff" points="163.5 296.3 286.1 204.3 163.5 112.4 163.5 296.3"></polygon><path d="M204.3,0C91.5,0,0,91.5,0,204.3S91.5,408.7,204.3,408.7s204.3-91.5,204.3-204.3S316.7,0,204.3,0ZM163.5,296.3V112.4l122.6,91.9Z" transform="translate(0 0)"></path></symbol><symbol id="shape_DqyVoZLNWU" viewBox="0 0 356.13 42.62"><path d="M349,20.45C303.49-22.75,16.68,15.66,4.5,17.31a5.2,5.2,0,1,0,1.4,10.3c8.66-1.18,18.88-2.47,30.26-3.81C132.05,12.56,310.74-1.54,341.85,28c2.91,2.75,4.13,5.62,3.85,9,0,.07,0,.13,0,.2a5.19,5.19,0,0,0,4.75,5.4,3.1,3.1,0,0,0,.43,0,5.2,5.2,0,0,0,5.18-4.77C356.59,31.35,354.16,25.34,349,20.45Z"></path></symbol><symbol id="shape_fihmKrGPWz" viewBox="0 0 32 32"><image href="https://w.ladicdn.com/ladiui/icons/social/facebook.svg" height="32" width="32"></image></symbol><symbol id="shape_xtRkiNtRll" viewBox="0 0 32 32"><image href="https://w.ladicdn.com/ladiui/icons/social/zalo.svg" height="32" width="32"></image></symbol><symbol id="shape_nuFjNARToS" viewBox="0 0 32 32"><image href="https://w.ladicdn.com/ladiui/icons/social/phone-call.svg" height="32" width="32"></image></symbol><symbol id="shape_OZLOuEhWZL" viewBox="0 0 100 100"><path d="m61.05,8c-4.31,0-8.21,1.74-11.05,4.55-2.84-2.81-6.74-4.55-11.05-4.55-8.67,0-15.71,5.82-15.71,15.71,0,13.96,26.76,31.41,26.76,31.41,0,0,26.76-15.12,26.76-31.41,0-8.43-7.03-15.71-15.71-15.71Zm-11.05,22.13c.12,0,.23.02.33.04,3.16.18,5.68,2.79,5.68,6,0,2.8-1.92,5.15-4.52,5.82v2.77c0,.83-.67,1.5-1.5,1.5s-1.5-.67-1.5-1.5v-2.77c-2.59-.67-4.52-3.02-4.52-5.82,0-.83.67-1.5,1.5-1.5s1.5.67,1.5,1.5c0,1.66,1.35,3.01,3.02,3.01s3.02-1.35,3.02-3.01-1.35-3.02-3.02-3.02c-.12,0-.23-.02-.33-.04-3.16-.18-5.68-2.79-5.68-6,0-2.8,1.92-5.15,4.52-5.82v-2.71c0-.83.67-1.5,1.5-1.5s1.5.67,1.5,1.5v2.71c2.59.67,4.52,3.02,4.52,5.82,0,.83-.67,1.5-1.5,1.5s-1.5-.67-1.5-1.5c0-1.66-1.35-3.02-3.02-3.02s-3.02,1.35-3.02,3.02,1.35,3.01,3.02,3.01Z"></path><path d="m87.72,66.64l-.26-.24c-.85-.76-2.05-1.03-3.14-.71l-15.68,6.89c-.03-.12-.04-.25-.08-.36-.33-.91-1.08-1.61-1.99-1.86l-17.08-5.13c-2.39-.72-4.92-.75-7.32-.1l-15.14,4.12-3.3-.05.02-1.29c.01-.97-.65-1.81-1.59-2.02l-8.8-1.99c-1.09-.25-2.13.57-2.14,1.69l-.28,20.48c-.02,1.1.97,1.94,2.06,1.75l8.84-1.55c.97-.17,1.68-1,1.69-1.99h0s1.96-.03,1.96-.03l33.09,4.38c.67.09,1.34.13,2,.13,3.13,0,6.19-.97,8.77-2.8l18.26-12.95.14-.11c.88-.8,1.39-1.94,1.39-3.13s-.51-2.33-1.4-3.13Zm-67.2,16.82l-6.59,1.15.24-17.44,6.55,1.48-.21,14.8Zm65.25-12.83l-18.17,12.89c-2.52,1.79-5.59,2.54-8.65,2.14l-33.2-4.39h-.11s-2.1.02-2.1.02l.13-9.08,3.72.05,15.55-4.23c1.86-.51,3.82-.48,5.67.07l17.11,5.13c-1.35,1.94-3.72,2.9-6.05,2.44l-10.27-2.04c-.81-.16-1.6.37-1.76,1.18s.37,1.6,1.18,1.76l10.27,2.04c.58.12,1.17.17,1.74.17,2.02,0,3.97-.7,5.54-1.94l18.85-8.29c.08,0,.16.02.22.07l.26.24c.26.23.4.55.4.9,0,.33-.12.63-.35.86Z"></path></symbol><symbol id="shape_qVZVQDgETZ" viewBox="0 0 100 100"><g><path d="M73,64.2l-8.2-8.2L63.5,56l-4,3.1c0,0-3,2.3-10.2-4.4c-6.4-6-7.1-9.8-5.8-11.3c0.2-0.2,3.6-3.2,3.6-3.2l0.1-1.4l-8-8.5   L38,30c-0.1,0-10.1,5.3-6.1,16.1C35.7,56.1,50,67.5,55,70.3c1.7,0.9,3.7,1.6,6,1.6c3.5,0,7.5-1.5,12-6.2L73,64.2z M38.3,32.2   l6.8,7.2c-0.6,0.5-1.1,1-1.5,1.3l-6.8-7.4C37.4,32.8,37.9,32.4,38.3,32.2z M56,68.5C51.1,65.8,37.4,55,33.8,45.4   c-1.8-4.9-0.3-8.4,1.6-10.7l6.7,7.3c-1.2,1.4-3.1,5.7,5.9,14.1c8.8,8.2,12.8,4.6,12.9,4.5l0.3-0.2l6.8,7   C63.9,70.3,59.9,70.7,56,68.5z M69.6,66.2l-6.9-7l1.4-1.1l6.8,6.8C70.5,65.4,70,65.8,69.6,66.2z"></path></g></symbol><symbol id="shape_FpoQoWhage" viewBox="0 0 100 100"><g><path d="M50,81c0.3,0,0.58-0.13,0.77-0.36C51.76,79.46,75,51.46,75,38c0-13.79-11.21-25-25-25S25,24.21,25,38   c0,13.46,23.24,41.46,24.23,42.64C49.42,80.87,49.7,81,50,81z M50,15c12.68,0,23,10.32,23,23c0,11.43-18.92,35.39-23,40.42   c-4.08-5.03-23-29-23-40.42C27,25.32,37.32,15,50,15z"></path><path d="M60,38c0-5.51-4.49-10-10-10s-10,4.49-10,10s4.49,10,10,10S60,43.51,60,38z M42,38c0-4.41,3.59-8,8-8s8,3.59,8,8   s-3.59,8-8,8S42,42.41,42,38z"></path><path d="M62.97,79.76c-0.13-0.54-0.68-0.87-1.21-0.73L50,81.97l-11.76-2.94c-0.54-0.14-1.08,0.19-1.21,0.73   c-0.13,0.54,0.19,1.08,0.73,1.21L45.88,83l-8.12,2.03c-0.54,0.13-0.86,0.68-0.73,1.21C37.14,86.7,37.55,87,38,87   c0.08,0,0.16-0.01,0.24-0.03L50,84.03l11.76,2.94C61.84,86.99,61.92,87,62,87c0.45,0,0.86-0.3,0.97-0.76   c0.13-0.54-0.19-1.08-0.73-1.21L54.12,83l8.12-2.03C62.78,80.84,63.1,80.29,62.97,79.76z"></path></g></symbol></svg>
+    <div id="preloader">
+        <h1>Nguyễn Sơn & Nghiêm Xuân</h1>
+        <h2 id="invite-text">Trân Trọng Kính Mời</h2>
+        <!-- <div class="spinner">Trân trọng kính mời</div> -->
+        <button class="btn" id="openCardBtn" onclick="openCard()">Mở Thiệp</button>
+    </div>
     <div
         class="ladi-wraper">
         <div id="SECTION1" class='ladi-section'>
@@ -10562,7 +10702,7 @@
                     text-shadow: 0 0 5px #000;
                     position: fixed;
                     top: -10%;
-                    z-index: 9999;
+                    z-index: 90000070;
                     -webkit-user-select: none;
                     -moz-user-select: none;
                     -ms-user-select: none;
