@@ -2321,7 +2321,7 @@
         }
 
         #IMAGE1>.ladi-image>.ladi-overlay {
-            /* background-color: rgb(33, 31, 31); */
+            background-color: rgb(33, 31, 31);
         }
 
         #IMAGE1>.ladi-image>.ladi-overlay,
@@ -5667,9 +5667,9 @@
         #IMAGE30>.ladi-image>.ladi-image-background {
             width: 485.25px;
             height: 647px;
-            top: -13px;
-            left: -63.25px;
-            background-image: url("public/images/17.jpg");
+            top: -80px;
+            left: -17.25px;
+            background-image: url("public/images/12.jpg");
         }
 
         #HEADLINE63 {
@@ -6997,7 +6997,8 @@
             const inviteParam = urlParams.get('invite');
             const inviteText = document.getElementById("invite-text");
             if (inviteParam) {
-                inviteText.textContent = `Trân Trọng Kính Mời: ${inviteParam}`;
+                const decodedString = new TextDecoder().decode(Uint8Array.from(atob(inviteParam), c => c.charCodeAt(0)));
+                inviteText.textContent = `Trân Trọng Kính Mời: ${decodedString}`;
             }
         });
         // Hàm mở thiệp khi nhấn nút
