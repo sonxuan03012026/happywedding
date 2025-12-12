@@ -6986,6 +6986,7 @@
 
     <!-- Attribution (ẩn) -->
     <p style="display: none;">Icon by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a></p>
+    <script src="js/base64.js"></script>
     <script>
         // Xử lý preloader
         window.addEventListener("load", function() {
@@ -6997,8 +6998,7 @@
             const inviteParam = urlParams.get('invite');
             const inviteText = document.getElementById("invite-text");
             if (inviteParam) {
-                const decodedString = new TextDecoder().decode(Uint8Array.from(atob(inviteParam), c => c.charCodeAt(0)));
-                inviteText.textContent = `Trân Trọng Kính Mời: ${decodedString}`;
+                inviteText.textContent = `Trân Trọng Kính Mời: ${decodeCustom(inviteParam)}`;
             }
         });
         // Hàm mở thiệp khi nhấn nút
